@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CalculatorExample"
+             x:Class="CalculatorExample.MainPage">
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="PlainButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#eeeeee"/>
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BorderRadius" Value="0"/>
+        <Setter Property="FontSize" Value="40" />
+      </Style>
+      <Style x:Key="DarkerButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#dddddd"/>
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="BorderRadius" Value="0"/>
+        <Setter Property="FontSize" Value="40" />
+      </Style>
+      <Style x:Key="BlueButton" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#2196F3"/>
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BorderRadius" Value="0"/>
+        <Setter Property="FontSize" Value="40" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Content>
+    <Grid x:Name="ControlGrid" RowSpacing="1" ColumnSpacing="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="50" />
+        <RowDefinition Height="100" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <Label Text="{Binding Result}" Grid.Row="1" 
+             HorizontalTextAlignment="End" VerticalTextAlignment="End" 
+             TextColor="Gray" FontSize="60" Grid.ColumnSpan="4" />
+      <Label Text="{Binding TempResult}" Grid.Row="0" 
+             HorizontalTextAlignment="End" VerticalTextAlignment="End"
+             TextColor="#555555" FontSize="30" Grid.ColumnSpan="4"/>
+      <Button Text = "C" Grid.Row="1" Grid.Column="0" Style="{StaticResource DarkerButton}" Clicked="ClearButtonClicked"/>
+      <Button Text = "+/-" Grid.Row="1" Grid.Column="1" Style="{StaticResource DarkerButton}" Clicked="PlusMinusButtonClicked"/>
+      <Button Text = "%" Grid.Row="1" Grid.Column="2" Style="{StaticResource DarkerButton}" Clicked="PercentButtonClicked" />
+      <Button Text = "/" Grid.Row="1" Grid.Column="3" Style="{StaticResource BlueButton}" Clicked="DivisionButtonClicked" />
+      <Button x:Name="Seven" Text = "7" Grid.Row="2" Grid.Column="0" Style="{StaticResource PlainButton}" />
+      <Button x:Name="Eight" Text = "8" Grid.Row="2" Grid.Column="1" Style="{StaticResource PlainButton}" />
+      <Button x:Name="Nine" Text = "9" Grid.Row="2" Grid.Column="2" Style="{StaticResource PlainButton}" />
+      <Button Text = "×" Grid.Row="2" Grid.Column="3" Style="{StaticResource BlueButton}" />
+      <Button x:Name="Four" Text = "4" Grid.Row="3" Grid.Column="0" Style="{StaticResource PlainButton}" />
+      <Button x:Name="Five" Text = "5" Grid.Row="3" Grid.Column="1" Style="{StaticResource PlainButton}" />
+      <Button x:Name="Six" Text = "6" Grid.Row="3" Grid.Column="2" Style="{StaticResource PlainButton}" />
+      <Button Text = "-" Grid.Row="3" Grid.Column="3" Style="{StaticResource BlueButton}" />
+      <Button x:Name="One" Text = "1" Grid.Row="4" Grid.Column="0" Style="{StaticResource PlainButton}" />
+      <Button x:Name="Two" Text = "2" Grid.Row="4" Grid.Column="1" Style="{StaticResource PlainButton}" />
+      <Button x:Name="Three" Text = "3" Grid.Row="4" Grid.Column="2" Style="{StaticResource PlainButton}" />
+      <Button Text = "+" Grid.Row="4" Grid.Column="3" Style="{StaticResource BlueButton}" />
+      <Button x:Name="Zero" Text = "0" Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="0"
+              Style="{StaticResource PlainButton}" />
+      <Button Text = "." Grid.Row="5" Grid.Column="2" Style="{StaticResource PlainButton}" />
+      <Button Text = "=" Grid.Row="5" Grid.Column="3" Style="{StaticResource BlueButton}" />
+    </Grid>
+  </ContentPage.Content>
+      
+  
+
+</ContentPage>
